@@ -3,79 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusicFlow - 全球独立音乐发行领导者</title>
+    <title>SonicPulse | 全球数字化音乐分发生态系统</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        html { scroll-behavior: smooth; }
-        body { background-color: #050505; color: white; font-family: system-ui, -apple-system, sans-serif; }
-        .hero-gradient { background: radial-gradient(circle at 50% -20%, #312e81 0%, #050505 60%); }
-        .feature-card:hover { border-color: #6366f1; background: rgba(99, 102, 241, 0.05); }
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap');
+        body { background-color: #030712; color: #f9fafb; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+        .gradient-bg { background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 40%); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .text-gradient { background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glow-button { box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     </style>
 </head>
-<body>
+<body class="gradient-bg">
 
-    <nav class="fixed w-full z-50 backdrop-blur-lg border-b border-white/10 px-6 py-4 flex justify-between items-center">
-        <div class="text-2xl font-black tracking-tighter text-indigo-500">MUSICFLOW</div>
-        <div class="hidden md:flex gap-8 text-sm font-medium">
-            <a href="#features" class="hover:text-indigo-400">服务</a>
-            <a href="#pricing" class="hover:text-indigo-400">价格</a>
-            <a href="#distribution" class="hover:text-indigo-400">分发渠道</a>
+    <nav class="fixed w-full z-50 px-6 py-5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass px-6 py-3 rounded-full">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center rotate-12">
+                    <i class="fa-solid fa-wave-square text-white"></i>
+                </div>
+                <span class="text-xl font-black tracking-widest uppercase">SonicPulse</span>
+            </div>
+            <div class="hidden lg:flex gap-10 text-sm font-medium text-gray-400">
+                <a href="#tech" class="hover:text-white transition">核心技术</a>
+                <a href="#global" class="hover:text-white transition">全球网络</a>
+                <a href="#earnings" class="hover:text-white transition">收益系统</a>
+            </div>
+            <button class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2 rounded-full text-sm font-bold glow-button transition">进入控制台</button>
         </div>
-        <button onclick="window.location.href='#join'" class="bg-white text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-indigo-500 hover:text-white transition">立即加入</button>
     </nav>
 
-    <section class="hero-gradient pt-32 pb-20 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="px-4 py-1 bg-indigo-500/10 text-indigo-400 rounded-full border border-indigo-500/20 text-xs font-bold">150+ 平台同步发行</span>
-            <h1 class="text-5xl md:text-7xl font-black mt-8 mb-6 leading-tight">像 CD Baby 一样发行<br><span class="text-indigo-500">像巨星一样赚钱</span></h1>
-            <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">无需签约唱片公司。保留 100% 的版权，将你的音乐送往 Spotify, Apple Music, TikTok 和更多平台。</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <button class="bg-indigo-600 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-indigo-500/40 transition">开始我的第一首歌</button>
-                <button class="bg-white/5 border border-white/10 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition">了解详情</button>
+    <section class="relative pt-40 pb-20 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border-indigo-500/30 text-indigo-400 text-xs font-bold mb-8">
+                <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span></span>
+                下一代音乐发行引擎 2.0 现已上线
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tight text-gradient">
+                从母带到全球<br>只需一个脉冲
+            </h1>
+            <p class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
+                SonicPulse 不仅仅是分发。我们通过 AI 驱动的元数据优化与版权自动追踪，确保每一分版税都能精准触达独立音乐人。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <button class="bg-white text-black px-12 py-5 rounded-2xl font-black text-lg hover:scale-105 transition shadow-2xl">启动分发流程</button>
+                <button class="glass px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/5 transition border-white/20">查看系统演示</button>
             </div>
         </div>
     </section>
 
-    <section id="distribution" class="py-20 border-y border-white/5 bg-white/5">
-        <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
-            <i class="fab fa-spotify text-4xl"></i>
-            <i class="fab fa-apple text-4xl"></i>
-            <i class="fab fa-amazon text-4xl"></i>
-            <i class="fab fa-tiktok text-4xl"></i>
-            <i class="fab fa-youtube text-4xl"></i>
-            <i class="fab fa-deezer text-4xl"></i>
-        </div>
-    </section>
-
-    <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold mb-4">为什么音乐人选择我们？</h2>
-            <p class="text-gray-400">一站式解决从上传到收钱的所有麻烦</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="feature-card p-10 rounded-3xl border border-white/10 transition-all">
-                <div class="w-12 h-12 bg-indigo-500 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-globe"></i></div>
-                <h3 class="text-xl font-bold mb-4">全球同步发行</h3>
-                <p class="text-gray-400 leading-relaxed text-sm">只需上传一次，我们负责帮你把音乐推送到全球每一个角落的流媒体平台。</p>
-            </div>
-            <div class="feature-card p-10 rounded-3xl border border-white/10 transition-all">
-                <div class="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-copyright"></i></div>
-                <h3 class="text-xl font-bold mb-4">100% 版权所有</h3>
-                <p class="text-gray-400 leading-relaxed text-sm">你永远拥有你的母带和词曲版权。你可以随时下架音乐，没有任何限制。</p>
-            </div>
-            <div class="feature-card p-10 rounded-3xl border border-white/10 transition-all">
-                <div class="w-12 h-12 bg-pink-500 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-chart-line"></i></div>
-                <h3 class="text-xl font-bold mb-4">实时数据分析</h3>
-                <p class="text-gray-400 leading-relaxed text-sm">谁在听你的歌？从哪个城市？什么年龄段？我们提供最详尽的听众画像。</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="py-24 bg-indigo-600/5 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-12">简单透明的收费</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white/5 p-10 rounded-3xl border border-white/10">
-                    <h4 class="text-lg font-bold mb-2">单曲发行</h4>
-                    <div class="tex
+    <section id="tech" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight">全透明版税流转<br><span class="text-indigo-500">拒绝黑盒结算</span></h2>
+                <div class="space-y-6">
+                    <div class="flex gap-5 p-6 glass rounded-3xl">
+                        <i class="fa-solid fa-microchip text-indigo-500 text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold mb-1 italic">Smart-Match™ 匹配技术</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">自动识别 150+ 平台的非正当翻唱与盗用，保护您的作品指纹信息。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 p-6 glass rounded-3xl">
+                        <i class="fa-solid fa-bolt text-purple-500 text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold mb-1 italic">48小时极速上架</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">通过优先分发通道，您的作品将以行业领先的速度出现在主流播放列表中。</p>
+                        </div>
+                    </div>
+                </div>
+            </di
