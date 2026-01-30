@@ -3,76 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SonicPulse | 全球数字化音乐分发生态系统</title>
+    <title>SonicPulse Pro | 全球数字版权与NFT分发生态系统</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap');
-        body { background-color: #030712; color: #f9fafb; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
-        .gradient-bg { background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 40%); }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .text-gradient { background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glow-button { box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
-        .floating { animation: floating 3s ease-in-out infinite; }
-        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        :root { --accent: #6366f1; --bg: #020617; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); color: #fff; overflow-x: hidden; }
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
+        .nft-gradient { background: linear-gradient(45deg, #f06, #48f, #9f0); background-size: 400% 400%; animation: gradient 15s ease infinite; }
+        @keyframes gradient { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .nav-item:hover { color: var(--accent); transform: translateX(5px); }
+        .sidebar { height: 100vh; position: sticky; top: 0; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
     </style>
 </head>
-<body class="gradient-bg">
+<body>
 
-    <nav class="fixed w-full z-50 px-6 py-5">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass px-6 py-3 rounded-full">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center rotate-12">
-                    <i class="fa-solid fa-wave-square text-white"></i>
-                </div>
-                <span class="text-xl font-black tracking-widest uppercase">SonicPulse</span>
-            </div>
-            <div class="hidden lg:flex gap-10 text-sm font-medium text-gray-400">
-                <a href="#tech" class="hover:text-white transition">核心技术</a>
-                <a href="#global" class="hover:text-white transition">全球网络</a>
-                <a href="#earnings" class="hover:text-white transition">收益系统</a>
-            </div>
-            <button class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2 rounded-full text-sm font-bold glow-button transition">进入控制台</button>
+<div class="flex flex-col lg:flex-row min-h-screen">
+    <aside class="w-full lg:w-72 bg-slate-950 border-r border-slate-800 p-6 space-y-8 z-50">
+        <div class="flex items-center gap-3 mb-10">
+            <div class="w-10 h-10 nft-gradient rounded-xl shadow-lg shadow-indigo-500/20"></div>
+            <span class="text-2xl font-black tracking-tighter">SONICPULSE<span class="text-indigo-500">PRO</span></span>
         </div>
-    </nav>
+        
+        <nav class="space-y-1">
+            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 px-3">Main Console</p>
+            <a href="javascript:void(0)" onclick="switchTab('dashboard')" class="nav-item flex items-center gap-3 p-3 rounded-xl glass text-indigo-400 font-bold"><i class="fa-solid fa-chart-line w-5"></i> 实时看板</a>
+            <a href="javascript:void(0)" onclick="switchTab('nft-lab')" class="nav-item flex items-center gap-3 p-3 rounded-xl text-slate-400 hover:bg-slate-900 transition"><i class="fa-solid fa-cube w-5"></i> NFT 实验室</a>
+            <a href="javascript:void(0)" onclick="switchTab('distribution')" class="nav-item flex items-center gap-3 p-3 rounded-xl text-slate-400 hover:bg-slate-900 transition"><i class="fa-solid fa-globe w-5"></i> 全球分发</a>
+            <a href="javascript:void(0)" onclick="switchTab('copyright')" class="nav-item flex items-center gap-3 p-3 rounded-xl text-slate-400 hover:bg-slate-900 transition"><i class="fa-solid fa-shield-halved w-5"></i> 版权监控</a>
+            <a href="javascript:void(0)" onclick="switchTab('wallet')" class="nav-item flex items-center gap-3 p-3 rounded-xl text-slate-400 hover:bg-slate-900 transition"><i class="fa-solid fa-wallet w-5"></i> 版税钱包</a>
+        </nav>
 
-    <section class="relative pt-40 pb-20 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border-indigo-500/30 text-indigo-400 text-xs font-bold mb-8">
-                <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span></span>
-                下一代音乐发行引擎 2.0 现已上线
-            </div>
-            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tight text-gradient">
-                从母带到全球<br>只需一个脉冲
-            </h1>
-            <p class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
-                SonicPulse 不仅仅是分发。我们通过 AI 驱动的元数据优化与版权自动追踪，确保每一分版税都能精准触达独立音乐人。
-            </p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <button class="bg-white text-black px-12 py-5 rounded-2xl font-black text-lg hover:scale-105 transition shadow-2xl">启动分发流程</button>
-                <button class="glass px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/5 transition border-white/20">查看系统演示</button>
+        <div class="pt-10">
+            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 px-3">Artist Status</p>
+            <div class="p-4 rounded-2xl bg-indigo-600/10 border border-indigo-500/20">
+                <div class="flex justify-between mb-2"><span class="text-xs">存储空间</span><span class="text-xs">85%</span></div>
+                <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 w-[85%]"></div></div>
+                <button class="w-full mt-4 py-2 bg-indigo-600 rounded-lg text-xs font-bold">升级专业版</button>
             </div>
         </div>
-    </section>
+    </aside>
 
-    <section id="tech" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <h2 class="text-4xl md:text-5xl font-bold leading-tight">全透明版税流转<br><span class="text-indigo-500">拒绝黑盒结算</span></h2>
-                <div class="space-y-6">
-                    <div class="flex gap-5 p-6 glass rounded-3xl">
-                        <i class="fa-solid fa-microchip text-indigo-500 text-2xl mt-1"></i>
-                        <div>
-                            <h4 class="font-bold mb-1 italic">Smart-Match™ 匹配技术</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">自动识别 150+ 平台的非正当翻唱与盗用，保护您的作品指纹信息。</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-5 p-6 glass rounded-3xl">
-                        <i class="fa-solid fa-bolt text-purple-500 text-2xl mt-1"></i>
-                        <div>
-                            <h4 class="font-bold mb-1 italic">48小时极速上架</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">通过优先分发通道，您的作品将以行业领先的速度出现在主流播放列表中。</p>
-                        </div>
-                    </div>
+    <main class="flex-1 p-4 lg:p-10">
+        
+        <div id="dashboard" class="tab-content active space-y-8">
+            <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold">艺术家控制台</h1>
+                    <p class="text-slate-500">2026年1月30日 实时同步数据</p>
                 </div>
-            </di
+                <div class="flex gap-3">
+                    <button class="px-5 py-2 rounded-xl border border-slate-700 text-sm hover:bg-slate-800">导出报告</button>
+                    <button class="px-5 py-2 rounded-xl bg-white text-black text-sm font-bold hover:bg-slate-200">发布作品</button>
+                </div>
+            </header>
+
+            <div class="data-grid">
+                <div class="glass p-6 rounded-3xl">
+                    <p class="text-slate-500 text-xs font-bold uppercase mb-2">预估总资产 (含NFT)</p>
+                    <h2 class="text-3xl font-black text-white">$142,850.32</h2>
+                    <p class="text-green-500 text-xs mt-2">
