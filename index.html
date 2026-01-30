@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicFlow | 独立音乐全球分发平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'PingFang SC', sans-serif; background-color: #0f172a; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .nav-active { color: #6366f1; border-left: 4px solid #6366f1; background: rgba(99, 102, 241, 0.1); }
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+    </style>
+</head>
+<body class="text-gray-100 antialiased">
+
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-slate-900 flex flex-col p-8">
+        <div class="flex justify-end"><i onclick="toggleMenu()" class="fa-solid fa-xmark text-3xl"></i></div>
+        <nav class="mt-8 space-y-6 text-2xl font-bold">
+            <a href="#" class="block text-indigo-400">控制台</a>
+            <a href="#" class="block">我的音乐</a>
+            <a href="#" class="block">版税报表</a>
+            <a href="#" class="block">平台介绍</a>
+        </nav>
+    </div>
+
+    <div class="flex h-screen overflow-hidden">
+        
+        <aside class="hidden md:flex w-64 flex-col bg-slate-900 border-r border-slate-800">
+            <div class="p-8">
+                <div class="flex items-center gap-2 text-2xl font-black italic tracking-tighter text-indigo-500">
+                    <i class="fa-solid fa-compact-disc animate-spin-slow"></i> MUSICFLOW
+                </div>
+            </div>
+            <nav class="flex-1 px-4 space-y-2">
+                <div class="p-3 nav-active rounded-r-xl flex items-center gap-3"><i class="fa-solid fa-gauge-high"></i> 控制台</div>
+                <div class="p-3 text-gray-400 hover:bg-slate-800 rounded-r-xl flex items-center gap-3 transition cursor-pointer"><i class="fa-solid fa-music"></i> 我的音乐</div>
+                <div class="p-3 text-gray-400 hover:bg-slate-800 rounded-r-xl flex items-center gap-3 transition cursor-pointer"><i class="fa-solid fa-chart-pie"></i> 收入统计</div>
+                <div class="p-3 text-gray-400 hover:bg-slate-800 rounded-r-xl flex items-center gap-3 transition cursor-pointer"><i class="fa-solid fa-globe"></i> 分发渠道</div>
+            </nav>
+            <div class="p-6 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <img src="https://ui-avatars.com/api/?name=Artist&background=6366f1&color=fff" class="w-10 h-10 rounded-full" />
+                    <div class="text-sm">
+                        <p class="font-bold">独立音乐人 A</p>
+                        <p class="text-gray-500 text-xs">普通会员</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 overflow-y-auto relative">
+            
+            <header class="sticky top-0 z-40 glass-card px-6 py-4 flex justify-between items-center border-b border-slate-800">
+                <div class="md:hidden flex items-center gap-2 font-bold text-indigo-500" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </div>
+                <h2 class="hidden md:block text-lg font-bold">概览面板</h2>
+                <div class="flex gap-4">
+                    <button onclick="showUploadModal()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg shadow-indigo-500/20 transition transform active:scale-95">
+                        <i class="fa-solid fa-plus mr-1"></i> 发布新歌曲
+                    </button>
+                </div>
+            </header>
+
+            <div class="p-6 md:p-10 space-y-10">
+                
+                <section>
+                    <h1 class="text-3xl font-black mb-2">全球分发，从未如此简单</h1>
+                    <p class="text-gray-400">将您的声音传递给全球 150 多个国家的听众。</p>
+                </section>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-3xl">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-1">待结算版税</p>
+                                <h3 class="text-3xl font-black text-white">$452.10</h3>
+                            </div>
+                            <div class="p-3 bg-green-500/10 text-green-500 rounded-2xl"><i class="fa-solid fa-money-bill-trend-up"></i></div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-3xl">
+                        <div class="flex justify-between items-start">
+                    
